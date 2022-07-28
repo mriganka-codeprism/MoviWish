@@ -28,7 +28,7 @@ const App = () => {
     fetchMovies().catch((err) => {
       err.message = "Please check your internet connection";
     });
-  }, [page]);
+  }, [page, tmdbApiKey]);
 
   console.log(page)
 
