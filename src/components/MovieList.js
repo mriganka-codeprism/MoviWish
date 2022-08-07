@@ -24,33 +24,19 @@ const InfiniteScroll = ({ items }) => {
     <>
       <Grid container>
         {items.slice(0, maxItems).map((item, index) => {
-          if (index + 1 === maxItems)
-            return (
-              <Grid
-                item
-                xs
-                md={4}
-                key={item.id}
-                display="flex"
-                justifyContent="center"
-              >
-                <div ref={lastEl}>
-                  <CustomBox items={item}></CustomBox>
-                </div>
-              </Grid>
-            );
-          return (
-            <Grid
-              item
-              key={item.id}
-              xs
-              md={4}
-              display="flex"
-              justifyContent="center"
-            >
-              <CustomBox items={item}></CustomBox>
-            </Grid>
-          );
+          const last = index + 1 === maxItems
+            return <Grid
+                  item
+                  xs
+                  md={4}
+                  key={item.id}
+                  display="flex"
+                  justifyContent="center"
+                >
+                  <div ref={last ? lastEl : undefined}>
+                    <CustomBox items={item}></CustomBox>
+                  </div>
+                </Grid>
         })}
       </Grid>
     </>
