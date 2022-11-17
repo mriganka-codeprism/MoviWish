@@ -16,7 +16,6 @@ const CustomBox = ({ items }) => {
       sx={{
         width: 300,
         height: 400,
-        m: 2,
         background: `url(https://image.tmdb.org/t/p/w500/${items.poster_path})`,
         backgroundSize: "cover",
       }}

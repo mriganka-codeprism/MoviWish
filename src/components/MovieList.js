@@ -22,13 +22,12 @@ const InfiniteScroll = ({ items }) => {
 
   return (
     <>
-      <Grid container>
+      <Grid container spacing={2}>
         {items.slice(0, maxItems).map((item, index) => {
           const last = index + 1 === maxItems
             return <Grid
                   item
-                  xs
-                  md={4}
+                  flexGrow={1}
                   key={item.id}
                   display="flex"
                   justifyContent="center"
